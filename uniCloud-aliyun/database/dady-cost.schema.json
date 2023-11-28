@@ -1,0 +1,76 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": ["item", "money"],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"date": {
+			"bsonType": "int",
+			"title": "日期",
+			"description": "请输入日期,不输入默认当前时间",
+			"trim": "both",
+			"defaultValue": {
+				"$env": "now"
+			},
+			"permission": {
+				"read": true,
+				"write": true
+			}
+		},
+		"ip": {
+			"bsonType": "string",
+			"title": "ip",
+			"description": "user ip",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "clientIP"
+			},
+			"permission": {
+				"read": true,
+				"write": true
+			}
+		},
+		"uid": {
+			"bsonType": "string",
+			"title": "uid",
+			"description": "user uid",
+			"trim": "both",
+			"forceDefaultValue": {
+				"$env": "uid"
+			},
+			"permission": {
+				"read": true,
+				"write": true
+			}
+		},
+		"item": {
+			"bsonType": "string",
+			"title": "花费条目",
+			"description": "花费条目 item",
+			"trim": "both",
+			"permission": {
+				"read": true,
+				"write": true
+			}
+		},
+		"money": {
+			"bsonType": "int",
+			"title": "花费金额",
+			"description": "花费金额 money",
+			"trim": "both",
+			"permission": {
+				"read": true,
+				"write": true
+			}
+		}
+
+	}
+}

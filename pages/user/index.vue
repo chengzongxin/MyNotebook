@@ -1,16 +1,10 @@
 <script setup lang="ts">
-	import { ref } from "vue";
-	import { onPageScroll, onShow } from "@dcloudio/uni-app";
-	import { onMounted } from "vue";
-	import { reactive } from "vue";
-
-
 	/* 点击登录 */
 	const onClickLogin = (e : "点击登录" | "点击头像登录" = "点击登录") => {
 		//判断登录态
 		uni.navigateTo({
-			url: "/sp-login/login/index",
-		});
+			url: '/uni_modules/uni-id-pages/pages/login/login-withpwd'
+		})
 	};
 </script>
 

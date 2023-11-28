@@ -122,6 +122,30 @@
         "navigationBarTitleText": "详情"
     }
 }
+,{
+    "path": "pages/dady-cost/add",
+    "style": {
+        "navigationBarTitleText": "新增"
+    }
+}
+,{
+    "path": "pages/dady-cost/edit",
+    "style": {
+        "navigationBarTitleText": "编辑"
+    }
+}
+,{
+    "path": "pages/dady-cost/list",
+    "style": {
+        "navigationBarTitleText": "列表"
+    }
+}
+,{
+    "path": "pages/dady-cost/detail",
+    "style": {
+        "navigationBarTitleText": "详情"
+    }
+}
 ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

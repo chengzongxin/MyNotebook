@@ -1,8 +1,13 @@
 <template>
 	<view class="content">
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-			<button @click="onClick">login</button>
+		<text class="title">{{title}}</text>
+		<view class="grid">
+			<view class="grid-item" @click="navTo('/pages/dady-cost/list')">
+				花费
+			</view>
+			<view class="grid-item" @click="navTo('/pages/dynamic/list')">
+				动态
+			</view>
 		</view>
 	</view>
 </template>
@@ -12,37 +17,28 @@
 
 	const title = ref(123456789)
 
-	const onClick = () => {
+	const navTo = (url : string) => {
 		uni.navigateTo({
-			url: '/uni_modules/uni-id-pages/pages/login/login-withpwd'
-		})
+			url,
+		});
 	}
 </script>
 
-<style>
+<style lang="less" scoped>
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 100rpx 100rpx 100rpx;
+			gap: 10rpx;
+			padding: 20rpx;
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+			.grid-item {
+				background-color: aquamarine;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
 	}
 </style>
