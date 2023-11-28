@@ -1,5 +1,6 @@
 <template>
 	<view class="content">
+		{{ user.name }}
 		<text class="title">{{title}}</text>
 		<view class="grid">
 			<view class="grid-item" @click="navTo('/pages/dady-cost/list')">
@@ -13,9 +14,14 @@
 </template>
 
 <script setup lang="ts">
-	import { ref } from 'vue';
+	import { onMounted, ref } from 'vue';
+	import { useUserStore } from "@/store/user"
 
+	const user = useUserStore();
 	const title = ref(123456789)
+
+	onMounted(() => {
+	})
 
 	const navTo = (url : string) => {
 		uni.navigateTo({

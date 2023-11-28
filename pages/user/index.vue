@@ -1,4 +1,7 @@
 <script setup lang="ts">
+	import { onMounted } from 'vue';
+	import { useUserStore } from '@/store/user'
+	const user = useUserStore()
 	/* 点击登录 */
 	const onClickLogin = (e : "点击登录" | "点击头像登录" = "点击登录") => {
 		//判断登录态
@@ -6,6 +9,20 @@
 			url: '/uni_modules/uni-id-pages/pages/login/login-withpwd'
 		})
 	};
+
+	onMounted(() => {
+		// uni.$emit('setUserInfo', data)
+		uni.$on('setUserInfo', res => {
+			console.log('setUserInfo', res);
+			user.$patch({
+				name: res.nickname,
+				age: 30,
+				sex: 1,
+				username: res.username,
+				isLogin: true
+			})
+		})
+	})
 </script>
 
 <template>
@@ -32,7 +49,7 @@
 
 		<!-- user info -->
 		<view class="name" @click="onClickLogin('点击登录')">
-			{{ "点击登录" }}
+			{{ user.name || "点击登录" }}
 			<image class="name-edit" src="https://pic1.ijiangmao.com/te/osf/3fb9f5d3190a40da8befa4e185a3b1dd.png"
 				mode="scaleToFill" />
 		</view>

@@ -13,7 +13,7 @@
 								<!-- 如果使用了联表查询，请参考生成的 admin 项目中 list.vue 页面 -->
 
 								<!-- 一般用法 -->
-								<uni-dateformat :date="item.date"></uni-dateformat>
+								<uni-dateformat :date="item.date" :threshold="[60000, 3600000]"></uni-dateformat>
 								<view class="item">
 									{{item.item}}
 								</view>
