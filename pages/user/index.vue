@@ -1,6 +1,7 @@
 <script setup lang="ts">
 	import { onMounted } from 'vue';
 	import { useUserStore } from '@/store/user'
+	import Avatar from "./avatar.vue"
 	const user = useUserStore()
 	/* 点击登录 */
 	const onClickLogin = (e : "点击登录" | "点击头像登录" = "点击登录") => {
@@ -34,9 +35,10 @@
 		<view class="header">
 			<view class="circle"></view>
 			<view class="avatar">
-				<image class="avatar-img" @click="onClickLogin('点击头像登录')"
+				<Avatar width="144rpx" height="144rpx" />
+				<!-- 				<image class="avatar-img" @click="onClickLogin('点击头像登录')"
 					:src="'https://pic1.ijiangmao.com/te/osf/48733ae10b914739b1001a1c61e77aa6.png'">
-				</image>
+				</image> -->
 				<view class="avatar-edit">
 					<image class="avatar-edit-img"
 						src="https://pic1.ijiangmao.com/te/osf/3fb9f5d3190a40da8befa4e185a3b1dd.png"
